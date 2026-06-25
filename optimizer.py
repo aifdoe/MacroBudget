@@ -99,7 +99,7 @@ def build_and_solve_model(foods):
     return model, food_vars, total_cost, total_calories, total_protein, total_fat
 
 
-def print_results(model, food_vars, total_cost, total_calories, total_protein, total_fat):
+def print_results(model, foods, food_vars, total_cost, total_calories, total_protein, total_fat):
     print("Status:", pulp.LpStatus[model.status])
     print()
 
@@ -115,11 +115,14 @@ def print_results(model, food_vars, total_cost, total_calories, total_protein, t
 
     print("Food amounts per day:")
 
-    for food_name, variable in food_vars.items():
+    for food in foods:
+        food_name = food["name"]
+        variable = food_vars[food_name]
         grams = variable.value()
 
         if grams > 0.01:
-            print(f"{food_name}: {grams:.1f} g")
+            cost = grams * food["price_per_kg"] / 1000
+            print(f"{food_name}: {grams:.1f} g ({cost:.2f} SEK)")
 
     print()
     print(f"Total cost: {pulp.value(total_cost):.2f} SEK/day")
@@ -131,7 +134,7 @@ def print_results(model, food_vars, total_cost, total_calories, total_protein, t
 def main():
     foods = load_foods(FOODS_FILE)
     model, food_vars, total_cost, total_calories, total_protein, total_fat = build_and_solve_model(foods)
-    print_results(model, food_vars, total_cost, total_calories, total_protein, total_fat)
+    print_results(model, foods, food_vars, total_cost, total_calories, total_protein, total_fat)
 
 
 if __name__ == "__main__":
