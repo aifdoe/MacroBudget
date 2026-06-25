@@ -63,10 +63,10 @@ Protein: 113.5-141.8 g
 Fat: 42.5-70.9 g
 
 Food amounts per day:
-basmati_rice_dry: 338.1 g
-oats: 300.0 g
-eggs: 158.4 g
-whey_protein: 38.7 g
+basmati_rice_dry: 338.1 g (11.83 SEK)
+oats: 300.0 g (7.50 SEK)
+eggs: 158.4 g (7.13 SEK)
+whey_protein: 38.7 g (9.68 SEK)
 
 Total cost: 36.14 SEK/day
 Total calories: 2700 kcal
