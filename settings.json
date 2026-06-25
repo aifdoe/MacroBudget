@@ -1,0 +1,9 @@
+{
+  "bodyweight_kg": 64.33,
+  "calories_min": 2700,
+  "calories_max": 2750,
+  "protein_min_per_lb": 0.8,
+  "protein_max_per_lb": 1.0,
+  "fat_min_per_lb": 0.3,
+  "fat_max_per_lb": 0.5
+}
