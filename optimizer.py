@@ -1,21 +1,30 @@
 import csv
+import json
 from pathlib import Path
 
 import pulp
 
 
 FOODS_FILE = Path("foods.csv")
+SETTINGS_FILE = Path("settings.json")
 
-# User target settings
-BODYWEIGHT_KG = 64.33
-CALORIES_MIN = 2700
-CALORIES_MAX = 2750
 
-PROTEIN_MIN_PER_LB = 0.8
-PROTEIN_MAX_PER_LB = 1.0
+def load_settings(file_path):
+    with open(file_path, mode="r", encoding="utf-8") as file:
+        return json.load(file)
 
-FAT_MIN_PER_LB = 0.3
-FAT_MAX_PER_LB = 0.5
+
+settings = load_settings(SETTINGS_FILE)
+
+BODYWEIGHT_KG = settings["bodyweight_kg"]
+CALORIES_MIN = settings["calories_min"]
+CALORIES_MAX = settings["calories_max"]
+
+PROTEIN_MIN_PER_LB = settings["protein_min_per_lb"]
+PROTEIN_MAX_PER_LB = settings["protein_max_per_lb"]
+
+FAT_MIN_PER_LB = settings["fat_min_per_lb"]
+FAT_MAX_PER_LB = settings["fat_max_per_lb"]
 
 KG_TO_LB = 2.20462
 BODYWEIGHT_LB = BODYWEIGHT_KG * KG_TO_LB
