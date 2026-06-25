@@ -79,6 +79,7 @@ Total fat: 42.5 g
 ```text
 macrobudget/
 ├── foods.csv
+├── settings.json
 ├── optimizer.py
 ├── requirements.txt
 ├── README.md
@@ -108,6 +109,27 @@ The current food data is stored manually in `foods.csv`.
 The dataset is intentionally small and approximate in this version. The purpose of the current version is to prove that the optimization core works before adding larger food databases or product-level data.
 
 Future versions may use official food composition data from Livsmedelsverket.
+
+## User settings
+
+User targets are stored in `settings.json`.
+
+Example:
+
+```json
+{
+  "bodyweight_kg": 64.33,
+  "calories_min": 2700,
+  "calories_max": 2750,
+  "protein_min_per_lb": 0.8,
+  "protein_max_per_lb": 1.0,
+  "fat_min_per_lb": 0.3,
+  "fat_max_per_lb": 0.5
+}
+```
+
+The optimizer uses these settings to calculate the calorie, protein, and fat constraints.
+
 
 ## Limitations
 
