@@ -8,59 +8,63 @@ from result_printer import print_results
 FOODS_FILE = Path("foods.csv")
 SETTINGS_FILE = Path("settings.json")
 
-
-try:
-    settings = load_settings(SETTINGS_FILE)
-except ValueError as error:
-    print(f"Error: {error}")
-    sys.exit(1)
-
-BODYWEIGHT_KG = settings["bodyweight_kg"]
-CALORIES_MIN = settings["calories_min"]
-CALORIES_MAX = settings["calories_max"]
-
-PROTEIN_MIN_PER_LB = settings["protein_min_per_lb"]
-PROTEIN_MAX_PER_LB = settings["protein_max_per_lb"]
-
-FAT_MIN_PER_LB = settings["fat_min_per_lb"]
-FAT_MAX_PER_LB = settings["fat_max_per_lb"]
-
 KG_TO_LB = 2.20462
-BODYWEIGHT_LB = BODYWEIGHT_KG * KG_TO_LB
 
-PROTEIN_MIN = PROTEIN_MIN_PER_LB * BODYWEIGHT_LB
-PROTEIN_MAX = PROTEIN_MAX_PER_LB * BODYWEIGHT_LB
 
-FAT_MIN = FAT_MIN_PER_LB * BODYWEIGHT_LB
-FAT_MAX = FAT_MAX_PER_LB * BODYWEIGHT_LB
+def calculate_targets(settings):
+    bodyweight_kg = settings["bodyweight_kg"]
+    bodyweight_lb = bodyweight_kg * KG_TO_LB
+
+    calories_min = settings["calories_min"]
+    calories_max = settings["calories_max"]
+
+    protein_min = settings["protein_min_per_lb"] * bodyweight_lb
+    protein_max = settings["protein_max_per_lb"] * bodyweight_lb
+
+    fat_min = settings["fat_min_per_lb"] * bodyweight_lb
+    fat_max = settings["fat_max_per_lb"] * bodyweight_lb
+
+    return {
+        "calories_min": calories_min,
+        "calories_max": calories_max,
+        "protein_min": protein_min,
+        "protein_max": protein_max,
+        "fat_min": fat_min,
+        "fat_max": fat_max,
+    }
 
 
 def main():
+    settings = load_settings(SETTINGS_FILE)
     foods = load_foods(FOODS_FILE)
+
+    targets = calculate_targets(settings)
+
     model, food_vars, total_cost, total_calories, total_protein, total_fat = build_and_solve_model(
-    foods,
-    CALORIES_MIN,
-    CALORIES_MAX,
-    PROTEIN_MIN,
-    PROTEIN_MAX,
-    FAT_MIN,
-    FAT_MAX,
-)
+        foods,
+        targets["calories_min"],
+        targets["calories_max"],
+        targets["protein_min"],
+        targets["protein_max"],
+        targets["fat_min"],
+        targets["fat_max"],
+    )
+
     print_results(
-    model,
-    foods,
-    food_vars,
-    total_cost,
-    total_calories,
-    total_protein,
-    total_fat,
-    CALORIES_MIN,
-    CALORIES_MAX,
-    PROTEIN_MIN,
-    PROTEIN_MAX,
-    FAT_MIN,
-    FAT_MAX,
-)
+        model,
+        foods,
+        food_vars,
+        total_cost,
+        total_calories,
+        total_protein,
+        total_fat,
+        targets["calories_min"],
+        targets["calories_max"],
+        targets["protein_min"],
+        targets["protein_max"],
+        targets["fat_min"],
+        targets["fat_max"],
+    )
 
 
 if __name__ == "__main__":
@@ -68,4 +72,4 @@ if __name__ == "__main__":
         main()
     except ValueError as error:
         print(f"Error: {error}")
-    
+        sys.exit(1)
