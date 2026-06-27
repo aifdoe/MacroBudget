@@ -241,7 +241,9 @@ def build_and_solve_model(foods):
 
 
 def print_results(model, foods, food_vars, total_cost, total_calories, total_protein, total_fat):
-    print("Status:", pulp.LpStatus[model.status])
+    status = pulp.LpStatus[model.status]
+
+    print("Status:", status)
     print()
 
     print("Targets:")
@@ -250,8 +252,20 @@ def print_results(model, foods, food_vars, total_cost, total_calories, total_pro
     print(f"Fat: {FAT_MIN:.1f}-{FAT_MAX:.1f} g")
     print()
 
-    if pulp.LpStatus[model.status] != "Optimal":
+    if status == "Infeasible":
+        print("No feasible solution found.")
+        print("The current food list and constraints cannot satisfy the selected targets.")
+        print("Try widening the calorie or macronutrient ranges, increasing food max limits, or adding more foods.")
+        return
+
+    if status == "Unbounded":
+        print("The model is unbounded.")
+        print("This usually means the optimization problem is missing an important constraint.")
+        return
+
+    if status != "Optimal":
         print("No optimal solution found.")
+        print("Solver status:", status)
         return
 
     print("Food amounts per day:")
