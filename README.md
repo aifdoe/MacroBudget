@@ -58,6 +58,7 @@ maximum grams per food per day
 Validation logic for user settings and food data is stored in `validation.py`.
 Data loading logic for `foods.csv` and `settings.json` is stored in `data_loader.py`.
 Optimization model logic is stored in `optimization_model.py`.
+Result formatting and terminal output are handled in `result_printer.py`.
 
 ## Example output
 
@@ -91,6 +92,7 @@ macrobudget/
 ├── data_loader.py
 ├── validation.py
 ├── optimization_model.py
+├── result_printer.py
 ├── requirements.txt
 ├── README.md
 └── .gitignore
