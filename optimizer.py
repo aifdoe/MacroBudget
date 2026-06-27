@@ -4,6 +4,7 @@ from pathlib import Path
 import pulp
 
 from data_loader import load_foods, load_settings
+from optimization_model import build_and_solve_model
 
 FOODS_FILE = Path("foods.csv")
 SETTINGS_FILE = Path("settings.json")
@@ -33,57 +34,6 @@ PROTEIN_MAX = PROTEIN_MAX_PER_LB * BODYWEIGHT_LB
 
 FAT_MIN = FAT_MIN_PER_LB * BODYWEIGHT_LB
 FAT_MAX = FAT_MAX_PER_LB * BODYWEIGHT_LB
-
-
-def build_and_solve_model(foods):
-    model = pulp.LpProblem("MacroBudget", pulp.LpMinimize)
-
-    food_vars = {}
-
-    for food in foods:
-        food_name = food["name"]
-
-        food_vars[food_name] = pulp.LpVariable(
-            name=f"grams_{food_name}",
-            lowBound=0,
-            upBound=food["max_grams_per_day"],
-            cat="Continuous",
-        )
-
-    total_cost = pulp.lpSum(
-        food_vars[food["name"]] * food["price_per_kg"] / 1000
-        for food in foods
-    )
-
-    total_calories = pulp.lpSum(
-        food_vars[food["name"]] * food["kcal_per_100g"] / 100
-        for food in foods
-    )
-
-    total_protein = pulp.lpSum(
-        food_vars[food["name"]] * food["protein_per_100g"] / 100
-        for food in foods
-    )
-
-    total_fat = pulp.lpSum(
-        food_vars[food["name"]] * food["fat_per_100g"] / 100
-        for food in foods
-    )
-
-    model += total_cost
-
-    model += total_calories >= CALORIES_MIN
-    model += total_calories <= CALORIES_MAX
-
-    model += total_protein >= PROTEIN_MIN
-    model += total_protein <= PROTEIN_MAX
-
-    model += total_fat >= FAT_MIN
-    model += total_fat <= FAT_MAX
-
-    model.solve(pulp.PULP_CBC_CMD(msg=False))
-
-    return model, food_vars, total_cost, total_calories, total_protein, total_fat
 
 
 def print_results(model, foods, food_vars, total_cost, total_calories, total_protein, total_fat):
@@ -134,7 +84,15 @@ def print_results(model, foods, food_vars, total_cost, total_calories, total_pro
 
 def main():
     foods = load_foods(FOODS_FILE)
-    model, food_vars, total_cost, total_calories, total_protein, total_fat = build_and_solve_model(foods)
+    model, food_vars, total_cost, total_calories, total_protein, total_fat = build_and_solve_model(
+    foods,
+    CALORIES_MIN,
+    CALORIES_MAX,
+    PROTEIN_MIN,
+    PROTEIN_MAX,
+    FAT_MIN,
+    FAT_MAX,
+)
     print_results(model, foods, food_vars, total_cost, total_calories, total_protein, total_fat)
 
 
