@@ -55,6 +55,8 @@ fat between selected minimum and maximum
 maximum grams per food per day
 ```
 
+Validation logic for user settings and food data is stored in `validation.py`.
+
 ## Example output
 
 ```text
@@ -84,6 +86,7 @@ macrobudget/
 ├── foods.csv
 ├── settings.json
 ├── optimizer.py
+├── validation.py
 ├── requirements.txt
 ├── README.md
 └── .gitignore
