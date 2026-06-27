@@ -5,7 +5,14 @@ from pathlib import Path
 
 import pulp
 
-from validation import validate_settings
+from validation import (
+    parse_food_name,
+    parse_non_negative_number,
+    parse_positive_number,
+    validate_food_columns,
+    validate_foods,
+    validate_settings,
+)
 
 FOODS_FILE = Path("foods.csv")
 SETTINGS_FILE = Path("settings.json")
@@ -78,69 +85,6 @@ def load_foods(file_path):
     validate_foods(foods)
 
     return foods
-
-
-def validate_food_columns(fieldnames):
-    required_columns = [
-        "name",
-        "price_per_kg",
-        "kcal_per_100g",
-        "protein_per_100g",
-        "fat_per_100g",
-        "max_grams_per_day",
-    ]
-
-    if fieldnames is None:
-        raise ValueError("foods.csv is empty")
-
-    for column in required_columns:
-        if column not in fieldnames:
-            raise ValueError(f"foods.csv is missing required column: {column}")
-
-
-def parse_food_name(value, row_number):
-    name = value.strip()
-
-    if name == "":
-        raise ValueError(f"foods.csv row {row_number}: name cannot be empty")
-
-    return name
-
-
-def parse_non_negative_number(value, field_name, row_number):
-    try:
-        number = float(value)
-    except ValueError:
-        raise ValueError(f"foods.csv row {row_number}: {field_name} must be a number")
-
-    if number < 0:
-        raise ValueError(f"foods.csv row {row_number}: {field_name} cannot be negative")
-
-    return number
-
-
-def parse_positive_number(value, field_name, row_number):
-    number = parse_non_negative_number(value, field_name, row_number)
-
-    if number <= 0:
-        raise ValueError(f"foods.csv row {row_number}: {field_name} must be greater than 0")
-
-    return number
-
-
-def validate_foods(foods):
-    if len(foods) == 0:
-        raise ValueError("foods.csv must contain at least one food")
-
-    seen_names = set()
-
-    for food in foods:
-        food_name = food["name"]
-
-        if food_name in seen_names:
-            raise ValueError(f"Duplicate food name in foods.csv: {food_name}")
-
-        seen_names.add(food_name)
 
 
 def build_and_solve_model(foods):
