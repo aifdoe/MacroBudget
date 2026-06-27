@@ -11,10 +11,13 @@ This is an early local prototype.
 The current version:
 
 * reads food data from a CSV file
+* reads user targets from a settings file
 * models food amounts as decision variables
 * minimizes total daily food cost
 * enforces caloric, protein, and fat constraints
 * supports maximum grams per day for each food
+* validates user settings and food data
+* reports when no feasible solution exists
 * prints an optimized daily food plan in grams
 
 ## Why this project exists
