@@ -114,6 +114,18 @@ Run the optimizer:
 python optimizer.py
 ```
 
+## Tests
+
+The project uses `pytest` for automated tests.
+
+To run the test suite:
+
+```bash
+python -m pytest
+```
+
+Current tests cover validation logic for user settings and food data.
+
 ## Data
 
 The current food data is stored manually in `foods.csv`.
