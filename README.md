@@ -55,11 +55,6 @@ fat between selected minimum and maximum
 maximum grams per food per day
 ```
 
-Validation logic for user settings and food data is stored in `validation.py`.
-Data loading logic for `foods.csv` and `settings.json` is stored in `data_loader.py`.
-Optimization model logic is stored in `optimization_model.py`.
-Result formatting and terminal output are handled in `result_printer.py`.
-
 ## Example output
 
 ```text
@@ -86,17 +81,31 @@ Total fat: 42.5 g
 
 ```text
 macrobudget/
-├── foods.csv
-├── settings.json
-├── optimizer.py
-├── data_loader.py
-├── validation.py
-├── optimization_model.py
-├── result_printer.py
-├── requirements.txt
-├── README.md
-└── .gitignore
+|-- foods.csv
+|-- settings.json
+|-- optimizer.py
+|-- data_loader.py
+|-- validation.py
+|-- optimization_model.py
+|-- result_printer.py
+|-- requirements.txt
+|-- README.md
+|-- .gitignore
+`-- tests/
+    |-- test_data_loader.py
+    |-- test_optimization_model.py
+    |-- test_optimizer.py
+    `-- test_validation.py
 ```
+
+Main responsibilities:
+
+* `optimizer.py` runs the main program flow.
+* `data_loader.py` reads `foods.csv` and `settings.json`.
+* `validation.py` validates user settings and food data.
+* `optimization_model.py` builds and solves the linear programming model.
+* `result_printer.py` formats and prints terminal output.
+* `tests/` contains automated tests for validation, data loading, target calculation, and optimization behavior.
 
 ## How to run
 
