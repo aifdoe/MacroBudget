@@ -124,7 +124,7 @@ To run the test suite:
 python -m pytest
 ```
 
-Current tests cover user settings validation, food data validation, target calculation, optimization model constraints, and infeasible model behavior.
+Current tests cover user settings validation, food data validation, data loading, target calculation, optimization model constraints, and infeasible model behavior.
 
 ## Data
 
