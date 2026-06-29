@@ -107,6 +107,14 @@ Main responsibilities:
 * `result_printer.py` formats and prints terminal output.
 * `tests/` contains automated tests for validation, data loading, target calculation, and optimization behavior.
 
+## Requirements
+
+* Python 3.13
+* PuLP
+* pytest for running tests
+
+The required Python packages are listed in `requirements.txt`.
+
 ## How to run
 
 Create and activate a virtual environment, then install the required packages:
