@@ -12,7 +12,8 @@ Planned scope:
 * Done: Update food data validation for minimum gram limits.
 * Done: Update the optimization model to support both minimum and maximum grams per food.
 * Done: Add tests for minimum gram constraints.
-* Update README documentation and example output if needed.
+* Done: Update README documentation and example output if needed.
+* Done: Require a minimum daily amount of frozen vegetables in the example food dataset.
 
 Purpose:
 
