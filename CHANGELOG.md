@@ -2,6 +2,22 @@
 
 All notable changes to MacroBudget will be documented in this file.
 
+## v0.2.0 - Practical food constraints
+
+### Added
+
+* Added `min_grams_per_day` to `foods.csv`.
+* Updated food data loading to read minimum grams per food.
+* Updated validation to reject foods where `min_grams_per_day` is greater than `max_grams_per_day`.
+* Updated the optimization model to use minimum grams as the lower bound for each food variable.
+* Added tests for minimum gram constraints.
+* Added a minimum daily amount of frozen vegetables to the example food dataset.
+* Updated README example output to show the practical vegetable constraint.
+
+### Notes
+
+This version makes the optimizer slightly more practical while keeping the model simple and local.
+
 ## v0.1.0 - Initial optimization core
 
 ### Added
