@@ -66,16 +66,19 @@ Protein: 113.5-141.8 g
 Fat: 42.5-70.9 g
 
 Food amounts per day:
-basmati_rice_dry: 338.1 g (11.83 SEK)
+basmati_rice_dry: 317.7 g (11.12 SEK)
 oats: 300.0 g (7.50 SEK)
-eggs: 158.4 g (7.13 SEK)
-whey_protein: 38.7 g (9.68 SEK)
+eggs: 153.5 g (6.91 SEK)
+frozen_vegetables: 200.0 g (6.00 SEK)
+whey_protein: 33.7 g (8.42 SEK)
 
-Total cost: 36.14 SEK/day
+Total cost: 39.95 SEK/day
 Total calories: 2700 kcal
 Total protein: 113.5 g
 Total fat: 42.5 g
 ```
+
+The example includes a minimum daily amount of frozen vegetables, showing how practical food constraints can affect the optimized result.
 
 ## Project structure
 
