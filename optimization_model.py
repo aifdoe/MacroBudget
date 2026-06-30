@@ -19,7 +19,7 @@ def build_and_solve_model(
 
         food_vars[food_name] = pulp.LpVariable(
             name=f"grams_{food_name}",
-            lowBound=0,
+            lowBound=food["min_grams_per_day"],
             upBound=food["max_grams_per_day"],
             cat="Continuous",
         )

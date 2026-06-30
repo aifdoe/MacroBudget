@@ -52,9 +52,32 @@ def test_validate_foods_rejects_empty_food_list():
 
 def test_validate_foods_rejects_duplicate_names():
     foods = [
-        {"name": "oats"},
-        {"name": "oats"},
+        {
+            "name": "oats",
+            "min_grams_per_day": 0,
+            "max_grams_per_day": 300,
+        },
+        {
+            "name": "oats",
+            "min_grams_per_day": 0,
+            "max_grams_per_day": 300,
+        },
     ]
 
     with pytest.raises(ValueError, match="Duplicate food name in foods.csv: oats"):
+        validate_foods(foods)
+
+def test_validate_foods_rejects_min_greater_than_max():
+    foods = [
+        {
+            "name": "vegetables",
+            "min_grams_per_day": 500,
+            "max_grams_per_day": 300,
+        }
+    ]
+
+    with pytest.raises(
+        ValueError,
+        match="Food min_grams_per_day cannot be greater than max_grams_per_day: vegetables",
+    ):
         validate_foods(foods)

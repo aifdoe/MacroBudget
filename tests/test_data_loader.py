@@ -39,8 +39,8 @@ def test_load_foods_reads_valid_csv(tmp_path):
     foods_file = tmp_path / "foods.csv"
 
     foods_file.write_text(
-        "name,price_per_kg,kcal_per_100g,protein_per_100g,fat_per_100g,max_grams_per_day\n"
-        "rice,20,360,7,1,500\n",
+        "name,price_per_kg,kcal_per_100g,protein_per_100g,fat_per_100g,min_grams_per_day,max_grams_per_day\n"
+        "rice,20,360,7,1,0,500\n",
         encoding="utf-8",
     )
 
@@ -52,4 +52,5 @@ def test_load_foods_reads_valid_csv(tmp_path):
     assert foods[0]["kcal_per_100g"] == 360
     assert foods[0]["protein_per_100g"] == 7
     assert foods[0]["fat_per_100g"] == 1
+    assert foods[0]["min_grams_per_day"] == 0    
     assert foods[0]["max_grams_per_day"] == 500

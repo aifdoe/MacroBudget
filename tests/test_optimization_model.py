@@ -11,6 +11,7 @@ def test_optimization_model_finds_solution_within_constraints():
             "kcal_per_100g": 360,
             "protein_per_100g": 7,
             "fat_per_100g": 1,
+            "min_grams_per_day": 0,
             "max_grams_per_day": 1000,
         },
         {
@@ -19,6 +20,7 @@ def test_optimization_model_finds_solution_within_constraints():
             "kcal_per_100g": 110,
             "protein_per_100g": 23,
             "fat_per_100g": 2,
+            "min_grams_per_day": 0,
             "max_grams_per_day": 1000,
         },
         {
@@ -27,6 +29,7 @@ def test_optimization_model_finds_solution_within_constraints():
             "kcal_per_100g": 884,
             "protein_per_100g": 0,
             "fat_per_100g": 100,
+            "min_grams_per_day": 0,
             "max_grams_per_day": 100,
         },
     ]
@@ -63,6 +66,7 @@ def test_optimization_model_reports_infeasible_when_targets_are_impossible():
             "kcal_per_100g": 360,
             "protein_per_100g": 7,
             "fat_per_100g": 1,
+            "min_grams_per_day": 0,
             "max_grams_per_day": 100,
         }
     ]

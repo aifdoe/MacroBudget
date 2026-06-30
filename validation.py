@@ -56,6 +56,7 @@ def validate_food_columns(fieldnames):
         "kcal_per_100g",
         "protein_per_100g",
         "fat_per_100g",
+        "min_grams_per_day",
         "max_grams_per_day",
     ]
 
@@ -110,3 +111,8 @@ def validate_foods(foods):
             raise ValueError(f"Duplicate food name in foods.csv: {food_name}")
 
         seen_names.add(food_name)
+
+        if food["min_grams_per_day"] > food["max_grams_per_day"]:
+            raise ValueError(
+                f"Food min_grams_per_day cannot be greater than max_grams_per_day: {food_name}"
+            )

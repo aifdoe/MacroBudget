@@ -49,6 +49,9 @@ def load_foods(file_path):
                     "fat_per_100g": parse_non_negative_number(
                         row["fat_per_100g"], "fat_per_100g", row_number
                     ),
+                    "min_grams_per_day": parse_non_negative_number(
+                        row["min_grams_per_day"], "min_grams_per_day", row_number
+                    ),                    
                     "max_grams_per_day": parse_positive_number(
                         row["max_grams_per_day"], "max_grams_per_day", row_number
                     ),
