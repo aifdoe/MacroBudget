@@ -193,6 +193,10 @@ Some optimized results may be mathematically valid but not yet practical as real
 
 See [CHANGELOG.md](CHANGELOG.md) for version history.
 
+## Backlog
+
+See [BACKLOG.md](BACKLOG.md) for planned improvements and version scope.
+
 ## Roadmap
 
 ### Version 1: Optimization core
