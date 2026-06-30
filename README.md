@@ -189,6 +189,10 @@ Current limitations:
 
 Some optimized results may be mathematically valid but not yet practical as real diets.
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history.
+
 ## Roadmap
 
 ### Version 1: Optimization core
