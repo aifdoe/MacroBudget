@@ -8,10 +8,10 @@ The goal is to keep development focused and avoid adding advanced product featur
 
 Planned scope:
 
-* Add `min_grams_per_day` to `foods.csv`.
-* Update food data validation for minimum gram limits.
-* Update the optimization model to support both minimum and maximum grams per food.
-* Add tests for minimum gram constraints.
+* Done: Add `min_grams_per_day` to `foods.csv`.
+* Done: Update food data validation for minimum gram limits.
+* Done: Update the optimization model to support both minimum and maximum grams per food.
+* Done: Add tests for minimum gram constraints.
 * Update README documentation and example output if needed.
 
 Purpose:

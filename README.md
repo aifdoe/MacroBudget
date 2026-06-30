@@ -15,7 +15,7 @@ The current version:
 * models food amounts as decision variables
 * minimizes total daily food cost
 * enforces caloric, protein, and fat constraints
-* supports maximum grams per day for each food
+* supports minimum and maximum grams per day for each food
 * validates user settings and food data
 * reports when no feasible solution exists
 * prints an optimized daily food plan in grams
@@ -52,7 +52,7 @@ The constraints include:
 calories between selected minimum and maximum
 protein between selected minimum and maximum
 fat between selected minimum and maximum
-maximum grams per food per day
+minimum and maximum grams per food per day
 ```
 
 ## Example output
