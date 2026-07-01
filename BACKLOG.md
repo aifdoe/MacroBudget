@@ -54,12 +54,30 @@ Out of scope:
 
 ## v0.4.0 - Cleaner result representation
 
-Possible scope:
+Planned scope:
 
-* Separate raw optimization result calculation from terminal printing.
-* Create a structured result object or dictionary.
-* Make result output easier to test.
-* Add tests for total cost, calories, protein, and fat calculations.
+* Create a structured result representation for optimization results.
+* Separate result calculation from terminal printing.
+* Keep `result_printer.py` focused only on formatting and printing.
+* Add tests for result totals and selected food amounts.
+* Avoid changing the optimization model unless necessary.
+* Avoid adding new nutrition features in this version.
+
+Purpose:
+
+This version should make the project easier to test and easier to extend later. A structured result object or dictionary will make it possible to reuse optimization results outside the terminal, such as in a future web app, API, or report.
+
+Out of scope:
+
+* new foods
+* micronutrients
+* meal planning
+* web app
+* database
+* API
+* price scraping
+* product matching
+
 
 ## Later versions
 
