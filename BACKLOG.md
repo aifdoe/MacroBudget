@@ -29,7 +29,8 @@ Example use cases:
 
 Planned scope:
 
-* Add more manually entered foods to `foods.csv`.
+* Done: Add more manually entered foods to `foods.csv`.
+* Done: Add potatoes, dry pasta, dry lentils, canned tuna, and apple to the example dataset.
 * Keep the dataset small enough to review manually.
 * Improve approximate price and nutrition values where obvious.
 * Avoid adding micronutrients in this version.
