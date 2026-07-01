@@ -27,12 +27,29 @@ Example use cases:
 
 ## v0.3.0 - Improved food dataset
 
-Possible scope:
+Planned scope:
 
-* Add more manually entered foods.
-* Improve approximate nutrition and price data.
-* Group foods by type, such as carb source, protein source, fat source, fruit, and vegetables.
-* Add documentation explaining that the dataset is approximate and not medical advice.
+* Add more manually entered foods to `foods.csv`.
+* Keep the dataset small enough to review manually.
+* Improve approximate price and nutrition values where obvious.
+* Avoid adding micronutrients in this version.
+* Avoid adding real product matching in this version.
+* Run the optimizer after each dataset change to check how the solution changes.
+* Update README example output if the optimized result changes significantly.
+
+Purpose:
+
+This version should make the optimizer work with a more realistic set of food options while keeping the model simple, local, and understandable.
+
+Out of scope:
+
+* micronutrients
+* web scraping
+* APIs
+* databases
+* product-level store matching
+* package sizes
+* integer optimization
 
 ## v0.4.0 - Cleaner result representation
 
