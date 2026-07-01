@@ -56,12 +56,12 @@ Out of scope:
 
 Planned scope:
 
-* Create a structured result representation for optimization results.
-* Separate result calculation from terminal printing.
-* Keep `result_printer.py` focused only on formatting and printing.
-* Add tests for result totals and selected food amounts.
-* Avoid changing the optimization model unless necessary.
-* Avoid adding new nutrition features in this version.
+* Done: Create a structured result representation for optimization results.
+* Done: Separate result calculation from terminal printing.
+* Done: Keep `result_printer.py` focused only on formatting and printing.
+* Done: Add tests for result totals and selected food amounts.
+* Done: Avoid changing the optimization model unless necessary.
+* Done: Avoid adding new nutrition features in this version.
 
 Purpose:
 
