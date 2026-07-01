@@ -3,6 +3,7 @@ from pathlib import Path
 
 from data_loader import load_foods, load_settings
 from optimization_model import build_and_solve_model
+from result_builder import build_result
 from result_printer import print_results
 
 FOODS_FILE = Path("foods.csv")
@@ -50,7 +51,7 @@ def main():
         targets["fat_max"],
     )
 
-    print_results(
+    result = build_result(
         model,
         foods,
         food_vars,
@@ -58,13 +59,9 @@ def main():
         total_calories,
         total_protein,
         total_fat,
-        targets["calories_min"],
-        targets["calories_max"],
-        targets["protein_min"],
-        targets["protein_max"],
-        targets["fat_min"],
-        targets["fat_max"],
     )
+
+    print_results(result, targets)
 
 
 if __name__ == "__main__":

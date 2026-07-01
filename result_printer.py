@@ -1,30 +1,13 @@
-import pulp
-
-
-def print_results(
-    model,
-    foods,
-    food_vars,
-    total_cost,
-    total_calories,
-    total_protein,
-    total_fat,
-    calories_min,
-    calories_max,
-    protein_min,
-    protein_max,
-    fat_min,
-    fat_max,
-):
-    status = pulp.LpStatus[model.status]
+def print_results(result, targets):
+    status = result["status"]
 
     print("Status:", status)
     print()
 
     print("Targets:")
-    print(f"Calories: {calories_min:.0f}-{calories_max:.0f} kcal")
-    print(f"Protein: {protein_min:.1f}-{protein_max:.1f} g")
-    print(f"Fat: {fat_min:.1f}-{fat_max:.1f} g")
+    print(f"Calories: {targets['calories_min']:.0f}-{targets['calories_max']:.0f} kcal")
+    print(f"Protein: {targets['protein_min']:.1f}-{targets['protein_max']:.1f} g")
+    print(f"Fat: {targets['fat_min']:.1f}-{targets['fat_max']:.1f} g")
     print()
 
     if status == "Infeasible":
@@ -45,18 +28,13 @@ def print_results(
 
     print("Food amounts per day:")
 
-    for food in foods:
-        food_name = food["name"]
-        variable = food_vars[food_name]
-        grams = variable.value()
+    for food in result["selected_foods"]:
+        print(f"{food['name']}: {food['grams']:.1f} g ({food['cost']:.2f} SEK)")
 
-        if grams > 0.01:
-            cost = grams * food["price_per_kg"] / 1000
-            print(f"{food_name}: {grams:.1f} g ({cost:.2f} SEK)")
+    totals = result["totals"]
 
     print()
-    print(f"Total cost: {pulp.value(total_cost):.2f} SEK/day")
-    print(f"Total calories: {pulp.value(total_calories):.0f} kcal")
-    print(f"Total protein: {pulp.value(total_protein):.1f} g")
-    print(f"Total fat: {pulp.value(total_fat):.1f} g")
-    
+    print(f"Total cost: {totals['cost']:.2f} SEK/day")
+    print(f"Total calories: {totals['calories']:.0f} kcal")
+    print(f"Total protein: {totals['protein']:.1f} g")
+    print(f"Total fat: {totals['fat']:.1f} g")
