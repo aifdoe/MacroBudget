@@ -66,19 +66,19 @@ Protein: 113.5-141.8 g
 Fat: 42.5-70.9 g
 
 Food amounts per day:
-basmati_rice_dry: 317.7 g (11.12 SEK)
 oats: 300.0 g (7.50 SEK)
-eggs: 153.5 g (6.91 SEK)
+olive_oil: 12.7 g (1.14 SEK)
 frozen_vegetables: 200.0 g (6.00 SEK)
-whey_protein: 33.7 g (8.42 SEK)
+pasta_dry: 216.9 g (6.51 SEK)
+lentils_dry: 176.8 g (6.19 SEK)
 
-Total cost: 39.95 SEK/day
+Total cost: 27.34 SEK/day
 Total calories: 2700 kcal
 Total protein: 113.5 g
 Total fat: 42.5 g
 ```
 
-The example includes a minimum daily amount of frozen vegetables, showing how practical food constraints can affect the optimized result.
+The example includes a minimum daily amount of frozen vegetables. The selected foods may change when the dataset is expanded, because the optimizer always chooses the lowest-cost combination that satisfies the constraints.
 
 ## Project structure
 
