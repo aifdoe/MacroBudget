@@ -90,6 +90,7 @@ macrobudget/
 |-- data_loader.py
 |-- validation.py
 |-- optimization_model.py
+|-- result_builder.py
 |-- result_printer.py
 |-- requirements.txt
 |-- README.md
@@ -107,7 +108,8 @@ Main responsibilities:
 * `data_loader.py` reads `foods.csv` and `settings.json`.
 * `validation.py` validates user settings and food data.
 * `optimization_model.py` builds and solves the linear programming model.
-* `result_printer.py` formats and prints terminal output.
+* `result_builder.py` converts PuLP optimization output into a structured Python result dictionary.
+* `result_printer.py` formats and prints structured results to the terminal.
 * `tests/` contains automated tests for validation, data loading, target calculation, and optimization behavior.
 
 ## Requirements
