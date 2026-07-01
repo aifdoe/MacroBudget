@@ -2,6 +2,19 @@
 
 All notable changes to MacroBudget will be documented in this file.
 
+## v0.3.0 - Improved food dataset
+
+### Added
+
+* Added more manually entered foods to `foods.csv`.
+* Added potatoes, dry pasta, dry lentils, canned tuna, and apple to the example dataset.
+* Updated README example output after the expanded dataset changed the optimized solution.
+* Updated backlog documentation for the dataset improvement work.
+
+### Notes
+
+This version expands the small local dataset while keeping the project simple and manually reviewable. The food data is still approximate and intended for testing the optimization workflow, not for medical or dietary advice.
+
 ## v0.2.0 - Practical food constraints
 
 ### Added
