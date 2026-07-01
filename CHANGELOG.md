@@ -2,6 +2,25 @@
 
 All notable changes to MacroBudget will be documented in this file.
 
+## v0.4.0 - Cleaner result representation
+
+### Added
+
+* Added `result_builder.py` to convert PuLP optimization output into a structured Python result dictionary.
+* Added tests for structured optimization results.
+* Added result handling for infeasible models.
+
+### Changed
+
+* Updated `optimizer.py` to build a structured result before printing.
+* Updated `result_printer.py` to print from structured result data instead of raw PuLP objects.
+* Updated README project structure and module responsibilities.
+* Updated backlog documentation for result representation work.
+
+### Notes
+
+This version improves internal architecture without changing the optimization model or user-facing output. The project is now easier to test and easier to extend toward future interfaces such as reports, APIs, or web apps.
+
 ## v0.3.0 - Improved food dataset
 
 ### Added
