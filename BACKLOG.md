@@ -82,12 +82,17 @@ Out of scope:
 
 Planned scope:
 
-* Export structured optimization results to a JSON file.
-* Create a small `result_exporter.py` module.
-* Keep terminal output unchanged.
-* Add tests for JSON result export.
-* Avoid adding a database, web app, or API in this version.
-* Avoid changing the optimization model unless necessary.
+Completed:
+
+* Done: Export structured optimization results to a JSON file.
+* Done: Create a small `result_exporter.py` module.
+* Done: Keep terminal output unchanged.
+* Done: Add tests for JSON result export.
+* Done: Format exported numeric values for readability.
+* Done: Ignore generated `result.json` in Git.
+* Done: Document JSON result export in README.
+* Done: Avoid adding a database, web app, or API in this version.
+* Done: Avoid changing the optimization model unless necessary.
 
 Purpose:
 
