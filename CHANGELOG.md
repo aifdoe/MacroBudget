@@ -2,6 +2,27 @@
 
 All notable changes to MacroBudget will be documented in this file.
 
+## v0.5.0 - Basic result export
+
+### Added
+
+* Added `result_exporter.py` for exporting structured optimization results to JSON.
+* Added `format_result_for_export()` to prepare readable user-facing export values.
+* Added tests for JSON result export and export formatting.
+* Added automatic `result.json` generation when running `python optimizer.py`.
+
+### Changed
+
+* Updated `optimizer.py` to export the structured result after optimization.
+* Updated README to document JSON result export.
+* Updated BACKLOG to mark the v0.5.0 result export scope as completed.
+
+### Notes
+
+This version adds a basic machine-readable output format while keeping the terminal output unchanged. The generated `result.json` file is ignored by Git because it is local program output, not source code.
+
+The optimization model was not changed in this release.
+
 ## v0.4.0 - Cleaner result representation
 
 ### Added
