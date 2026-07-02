@@ -78,6 +78,31 @@ Out of scope:
 * price scraping
 * product matching
 
+## v0.5.0 - Basic result export
+
+Planned scope:
+
+* Export structured optimization results to a JSON file.
+* Create a small `result_exporter.py` module.
+* Keep terminal output unchanged.
+* Add tests for JSON result export.
+* Avoid adding a database, web app, or API in this version.
+* Avoid changing the optimization model unless necessary.
+
+Purpose:
+
+This version should make optimization results reusable outside the terminal. Exporting results to JSON creates a simple foundation for future reports, APIs, dashboards, or web interfaces.
+
+Out of scope:
+
+* database
+* web app
+* API
+* dashboards
+* PDF export
+* Excel export
+* automatic price collection
+* product matching
 
 ## Later versions
 
