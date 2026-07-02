@@ -4,10 +4,12 @@ from pathlib import Path
 from data_loader import load_foods, load_settings
 from optimization_model import build_and_solve_model
 from result_builder import build_result
+from result_exporter import export_result_to_json
 from result_printer import print_results
 
 FOODS_FILE = Path("foods.csv")
 SETTINGS_FILE = Path("settings.json")
+RESULT_FILE = Path("result.json")
 
 KG_TO_LB = 2.20462
 
@@ -61,6 +63,7 @@ def main():
         total_fat,
     )
 
+    export_result_to_json(result, RESULT_FILE)
     print_results(result, targets)
 
 
