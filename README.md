@@ -80,6 +80,10 @@ Total fat: 42.5 g
 
 The example includes a minimum daily amount of frozen vegetables. The selected foods may change when the dataset is expanded, because the optimizer always chooses the lowest-cost combination that satisfies the constraints.
 
+Running the optimizer also writes the latest structured result to `result.json`.
+
+The generated JSON file is ignored by Git because it is local output, not source code.
+
 ## Project structure
 
 ```text
@@ -91,6 +95,7 @@ macrobudget/
 |-- validation.py
 |-- optimization_model.py
 |-- result_builder.py
+|-- result_exporter.py
 |-- result_printer.py
 |-- requirements.txt
 |-- README.md
@@ -109,6 +114,7 @@ Main responsibilities:
 * `validation.py` validates user settings and food data.
 * `optimization_model.py` builds and solves the linear programming model.
 * `result_builder.py` converts PuLP optimization output into a structured Python result dictionary.
+* `result_exporter.py` formats and exports structured optimization results to JSON.
 * `result_printer.py` formats and prints structured results to the terminal.
 * `tests/` contains automated tests for validation, data loading, target calculation, and optimization behavior.
 
