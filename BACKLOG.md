@@ -109,6 +109,35 @@ Out of scope:
 * automatic price collection
 * product matching
 
+## v0.6.0 - Better infeasibility feedback
+
+Planned scope:
+
+* Add clearer feedback when the optimization model is infeasible.
+* Show basic constraint ranges used in the failed run.
+* Suggest practical next actions such as widening calorie ranges, increasing food max limits, or adding more foods.
+* Keep the optimization model unchanged unless necessary.
+* Keep terminal output simple and beginner-readable.
+* Add tests for infeasible result printing or formatting.
+* Avoid adding new nutrition features in this version.
+* Avoid adding a database, web app, API, dashboard, or scraping.
+
+Purpose:
+
+This version should make failed optimization runs easier to understand. Instead of only reporting that no feasible solution exists, the program should help the user identify likely causes and reasonable next steps.
+
+Out of scope:
+
+* automatic diagnosis of exact infeasibility causes
+* meal planning
+* micronutrients
+* database
+* web app
+* API
+* dashboards
+* price scraping
+* product matching
+
 ## Later versions
 
 Possible future work:
