@@ -13,7 +13,18 @@ def print_results(result, targets):
     if status == "Infeasible":
         print("No feasible solution found.")
         print("The current food list and constraints cannot satisfy the selected targets.")
-        print("Try widening the calorie or macronutrient ranges, increasing food max limits, or adding more foods.")
+        print()
+        print("Likely causes:")
+        print("* The calorie range is too narrow.")
+        print("* The protein or fat ranges conflict with the available foods.")
+        print("* Some foods have max_grams_per_day limits that are too restrictive.")
+        print("* Minimum food amounts may force too many calories or macros.")
+        print()
+        print("Suggested next steps:")
+        print("* Widen the calorie range in settings.json.")
+        print("* Increase max_grams_per_day for realistic foods in foods.csv.")
+        print("* Add more foods with different macro profiles.")
+        print("* Check whether min_grams_per_day values are too restrictive.")
         return
 
     if status == "Unbounded":
