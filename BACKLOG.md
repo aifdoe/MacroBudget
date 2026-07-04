@@ -137,6 +137,51 @@ Out of scope:
 * price scraping
 * product matching
 
+## v0.7.0 - Food data quality improvements
+
+Planned scope:
+
+* Add a `category` column to `foods.csv`.
+* Define a small set of allowed food categories.
+* Validate that every food has a category.
+* Validate that every category value is allowed.
+* Update data loading tests for the new column.
+* Update validation tests for invalid categories.
+* Update README documentation for food categories.
+* Keep the optimization model unchanged unless necessary.
+* Keep terminal output and JSON output unchanged.
+* Avoid adding new nutrition constraints in this version.
+* Avoid adding real store products, package sizes, scraping, product matching, database, web app, API, or dashboard.
+
+Purpose:
+
+This version should improve the structure and quality of the food dataset. Food categories will make the data easier to understand and prepare the project for future practical constraints such as minimum vegetables, maximum supplements, or limits on specific food groups.
+
+Allowed categories:
+
+* `carb`
+* `protein`
+* `fat`
+* `vegetable`
+* `fruit`
+* `dairy`
+* `mixed`
+* `supplement`
+
+Out of scope:
+
+* new optimization constraints based on categories
+* micronutrients
+* meal planning
+* real store products
+* package sizes
+* database
+* web app
+* API
+* dashboards
+* price scraping
+* product matching
+
 ## Later versions
 
 Possible future work:
