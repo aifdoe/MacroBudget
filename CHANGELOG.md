@@ -2,6 +2,28 @@
 
 All notable changes to MacroBudget will be documented in this file.
 
+## v0.7.0 - Food data quality improvements
+
+### Added
+
+* Added a `category` column to `foods.csv`.
+* Added a defined set of allowed food categories.
+* Added validation for missing or invalid food categories.
+* Added `parse_food_category()` for food category parsing.
+* Added tests for food category loading and validation.
+
+### Changed
+
+* Updated `data_loader.py` to load food categories.
+* Updated README to document food categories.
+* Updated BACKLOG to mark the v0.7.0 food data quality scope as completed.
+
+### Notes
+
+This version improves the structure and quality of the food dataset. Food categories are currently metadata only and do not affect the optimization model yet.
+
+The optimization model, terminal output, and JSON output were not changed in this release.
+
 ## v0.6.0 - Better infeasibility feedback
 
 ### Added
