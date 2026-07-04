@@ -139,19 +139,19 @@ Out of scope:
 
 ## v0.7.0 - Food data quality improvements
 
-Planned scope:
+Completed:
 
-* Add a `category` column to `foods.csv`.
-* Define a small set of allowed food categories.
-* Validate that every food has a category.
-* Validate that every category value is allowed.
-* Update data loading tests for the new column.
-* Update validation tests for invalid categories.
-* Update README documentation for food categories.
-* Keep the optimization model unchanged unless necessary.
-* Keep terminal output and JSON output unchanged.
-* Avoid adding new nutrition constraints in this version.
-* Avoid adding real store products, package sizes, scraping, product matching, database, web app, API, or dashboard.
+* Done: Add a `category` column to `foods.csv`.
+* Done: Define a small set of allowed food categories.
+* Done: Validate that every food has a category.
+* Done: Validate that every category value is allowed.
+* Done: Update data loading tests for the new column.
+* Done: Update validation tests for invalid categories.
+* Done: Update README documentation for food categories.
+* Done: Keep the optimization model unchanged unless necessary.
+* Done: Keep terminal output and JSON output unchanged.
+* Done: Avoid adding new nutrition constraints in this version.
+* Done: Avoid adding real store products, package sizes, scraping, product matching, database, web app, API, or dashboard.
 
 Purpose:
 
