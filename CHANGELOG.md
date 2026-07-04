@@ -2,6 +2,27 @@
 
 All notable changes to MacroBudget will be documented in this file.
 
+## v0.6.0 - Better infeasibility feedback
+
+### Added
+
+* Added clearer terminal feedback when the optimization model is infeasible.
+* Added likely causes for infeasible optimization results.
+* Added suggested next steps for resolving infeasible runs.
+* Added tests for infeasible result printing.
+
+### Changed
+
+* Updated `result_printer.py` to provide more helpful infeasible-result output.
+* Updated README to document infeasible result feedback.
+* Updated BACKLOG to mark the v0.6.0 infeasibility feedback scope as completed.
+
+### Notes
+
+This version improves the user experience when no feasible solution can be found. It does not automatically diagnose the exact mathematical cause of infeasibility, but it gives practical guidance for common issues such as narrow calorie ranges, restrictive food maximums, conflicting macro targets, or minimum food amounts.
+
+The optimization model was not changed in this release.
+
 ## v0.5.0 - Basic result export
 
 ### Added
