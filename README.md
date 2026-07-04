@@ -162,6 +162,25 @@ The dataset is intentionally small and approximate in this version. The purpose 
 
 Future versions may use official food composition data from Livsmedelsverket.
 
+### Food categories
+
+Each food in `foods.csv` has a `category` value.
+
+Allowed categories:
+
+* `carb`
+* `protein`
+* `fat`
+* `vegetable`
+* `fruit`
+* `dairy`
+* `mixed`
+* `supplement`
+
+Categories are currently used as food metadata only. They do not yet affect the optimization model.
+
+They prepare the project for future practical constraints, such as minimum vegetables, minimum fruit, or maximum supplement usage.
+
 ## User settings
 
 User targets are stored in `settings.json`.
