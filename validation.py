@@ -1,3 +1,15 @@
+ALLOWED_FOOD_CATEGORIES = {
+    "carb",
+    "protein",
+    "fat",
+    "vegetable",
+    "fruit",
+    "dairy",
+    "mixed",
+    "supplement",
+}
+
+
 def validate_settings(settings):
     required_fields = [
         "bodyweight_kg",
@@ -48,10 +60,12 @@ def validate_settings(settings):
 
     if settings["fat_min_per_lb"] >= settings["fat_max_per_lb"]:
         raise ValueError("fat_min_per_lb must be lower than fat_max_per_lb")
-    
+
+
 def validate_food_columns(fieldnames):
     required_columns = [
         "name",
+        "category",
         "price_per_kg",
         "kcal_per_100g",
         "protein_per_100g",
@@ -75,6 +89,21 @@ def parse_food_name(value, row_number):
         raise ValueError(f"foods.csv row {row_number}: name cannot be empty")
 
     return name
+
+
+def parse_food_category(value, row_number):
+    category = value.strip()
+
+    if category == "":
+        raise ValueError(f"foods.csv row {row_number}: category cannot be empty")
+
+    if category not in ALLOWED_FOOD_CATEGORIES:
+        allowed_categories = ", ".join(sorted(ALLOWED_FOOD_CATEGORIES))
+        raise ValueError(
+            f"foods.csv row {row_number}: category must be one of: {allowed_categories}"
+        )
+
+    return category
 
 
 def parse_non_negative_number(value, field_name, row_number):

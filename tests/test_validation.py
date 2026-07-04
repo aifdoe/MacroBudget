@@ -1,6 +1,7 @@
 import pytest
 
 from validation import (
+    parse_food_category,
     parse_non_negative_number,
     parse_positive_number,
     validate_foods,
@@ -44,6 +45,15 @@ def test_parse_positive_number_rejects_zero_value():
     with pytest.raises(ValueError, match="max_grams_per_day must be greater than 0"):
         parse_positive_number("0", "max_grams_per_day", 4)
 
+def test_parse_food_category_accepts_allowed_category():
+    category = parse_food_category("carb", 2)
+
+    assert category == "carb"
+
+
+def test_parse_food_category_rejects_invalid_category():
+    with pytest.raises(ValueError, match="category must be one of"):
+        parse_food_category("snack", 2)
 
 def test_validate_foods_rejects_empty_food_list():
     with pytest.raises(ValueError, match="foods.csv must contain at least one food"):

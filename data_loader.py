@@ -2,6 +2,7 @@ import csv
 import json
 
 from validation import (
+    parse_food_category,
     parse_food_name,
     parse_non_negative_number,
     parse_positive_number,
@@ -37,6 +38,7 @@ def load_foods(file_path):
             for row_number, row in enumerate(reader, start=2):
                 food = {
                     "name": parse_food_name(row["name"], row_number),
+                    "category": parse_food_category(row["category"], row_number),
                     "price_per_kg": parse_non_negative_number(
                         row["price_per_kg"], "price_per_kg", row_number
                     ),
