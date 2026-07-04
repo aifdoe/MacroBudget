@@ -54,7 +54,7 @@ Out of scope:
 
 ## v0.4.0 - Cleaner result representation
 
-Planned scope:
+Completed:
 
 * Done: Create a structured result representation for optimization results.
 * Done: Separate result calculation from terminal printing.
@@ -79,8 +79,6 @@ Out of scope:
 * product matching
 
 ## v0.5.0 - Basic result export
-
-Planned scope:
 
 Completed:
 
@@ -111,16 +109,17 @@ Out of scope:
 
 ## v0.6.0 - Better infeasibility feedback
 
-Planned scope:
+Completed:
 
-* Add clearer feedback when the optimization model is infeasible.
-* Show basic constraint ranges used in the failed run.
-* Suggest practical next actions such as widening calorie ranges, increasing food max limits, or adding more foods.
-* Keep the optimization model unchanged unless necessary.
-* Keep terminal output simple and beginner-readable.
-* Add tests for infeasible result printing or formatting.
-* Avoid adding new nutrition features in this version.
-* Avoid adding a database, web app, API, dashboard, or scraping.
+* Done: Add clearer feedback when the optimization model is infeasible.
+* Done: Show basic constraint ranges used in the failed run.
+* Done: Suggest practical next actions such as widening calorie ranges, increasing food max limits, or adding more foods.
+* Done: Keep the optimization model unchanged unless necessary.
+* Done: Keep terminal output simple and beginner-readable.
+* Done: Add tests for infeasible result printing or formatting.
+* Done: Document infeasible result feedback in README.
+* Done: Avoid adding new nutrition features in this version.
+* Done: Avoid adding a database, web app, API, dashboard, or scraping.
 
 Purpose:
 
