@@ -200,6 +200,19 @@ Current limitations:
 
 Some optimized results may be mathematically valid but not yet practical as real diets.
 
+### Infeasible results
+
+If no feasible solution exists, MacroBudget prints likely causes and suggested next steps.
+
+Common causes include:
+
+* calorie ranges that are too narrow
+* macro ranges that conflict with the available foods
+* food maximum limits that are too restrictive
+* minimum food amounts that force too many calories or macros
+
+The program does not yet automatically diagnose the exact cause of infeasibility.
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for version history.
