@@ -2,6 +2,34 @@
 
 All notable changes to MacroBudget will be documented in this file.
 
+## v1.0.0 - Stable local optimizer
+
+### Added
+
+* Marked MacroBudget as the first stable local optimizer release.
+* Confirmed example input files are included and tested.
+* Confirmed scenario examples are included and tested.
+* Confirmed JSON result export is included.
+* Confirmed infeasible-result feedback is included.
+
+### Changed
+
+* Polished README for v1.0.0.
+* Updated README to describe the project as a stable local optimizer prototype.
+* Updated README project structure and test coverage documentation.
+* Updated the V1 roadmap to reflect the current stable local optimizer features.
+* Polished BACKLOG consistency for completed versions.
+
+### Notes
+
+This release marks the first stable local version of MacroBudget.
+
+MacroBudget is now a documented and tested local Python optimizer for minimizing daily food cost under calorie, protein, fat, and practical food amount constraints.
+
+The project includes structured result handling, JSON export, food category metadata, example input files, scenario examples, automated tests, and clearer infeasible-result feedback.
+
+The optimization model, normal terminal output, and JSON output were not changed in this release.
+
 ## v0.9.0 - Scenario examples and polish
 
 ### Added
