@@ -6,7 +6,7 @@ The goal is to keep development focused and avoid adding advanced product featur
 
 ## v0.2.0 - Practical food constraints
 
-Planned scope:
+Completed:
 
 * Done: Add `min_grams_per_day` to `foods.csv`.
 * Done: Update food data validation for minimum gram limits.
@@ -27,16 +27,16 @@ Example use cases:
 
 ## v0.3.0 - Improved food dataset
 
-Planned scope:
+Completed:
 
 * Done: Add more manually entered foods to `foods.csv`.
 * Done: Add potatoes, dry pasta, dry lentils, canned tuna, and apple to the example dataset.
-* Keep the dataset small enough to review manually.
-* Improve approximate price and nutrition values where obvious.
-* Avoid adding micronutrients in this version.
-* Avoid adding real product matching in this version.
-* Run the optimizer after each dataset change to check how the solution changes.
-* Update README example output if the optimized result changes significantly.
+* Done: Keep the dataset small enough to review manually.
+* Done: Improve approximate price and nutrition values where obvious.
+* Done: Avoid adding micronutrients in this version.
+* Done: Avoid adding real product matching in this version.
+* Done: Run the optimizer after each dataset change to check how the solution changes.
+* Done: Update README example output if the optimized result changes significantly.
 
 Purpose:
 
