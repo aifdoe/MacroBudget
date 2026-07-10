@@ -182,6 +182,38 @@ Out of scope:
 * price scraping
 * product matching
 
+## v0.8.0 - Better configuration and examples
+
+Planned scope:
+
+* Add example input files for users who want to try the project safely.
+* Add `example_settings.json`.
+* Add `example_foods.csv`.
+* Document how example files relate to the main `settings.json` and `foods.csv`.
+* Improve README instructions for running the optimizer.
+* Keep the optimization model unchanged unless necessary.
+* Keep terminal output and JSON output unchanged.
+* Avoid adding new nutrition constraints in this version.
+* Avoid adding real store products, package sizes, scraping, product matching, database, web app, API, or dashboard.
+
+Purpose:
+
+This version should make MacroBudget easier for other people to understand and try. Example files provide safe reference inputs without requiring users to edit the main local files immediately.
+
+Out of scope:
+
+* new optimization constraints
+* micronutrients
+* meal planning
+* real store products
+* package sizes
+* database
+* web app
+* API
+* dashboards
+* price scraping
+* product matching
+
 ## Later versions
 
 Possible future work:
