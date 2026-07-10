@@ -2,6 +2,27 @@
 
 All notable changes to MacroBudget will be documented in this file.
 
+## v0.9.0 - Scenario examples and polish
+
+### Added
+
+* Added an optimal optimizer scenario in the `scenarios/` folder.
+* Added an infeasible optimizer scenario in the `scenarios/` folder.
+* Added tests for scenario examples.
+* Added scenario documentation to README.
+
+### Changed
+
+* Updated BACKLOG to mark the v0.9.0 scenario examples scope as completed.
+
+### Notes
+
+This version improves the project as a portfolio-ready optimization example by showing both successful and infeasible optimizer behavior.
+
+The scenario files are used by automated tests to verify that the optimizer can solve a valid scenario and correctly report an infeasible scenario.
+
+The optimization model, normal terminal output, and JSON output were not changed in this release.
+
 ## v0.8.0 - Better configuration and examples
 
 ### Added
