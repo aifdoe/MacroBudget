@@ -6,7 +6,7 @@ The long-term goal is to build a practical food cost and nutrition optimizer for
 
 ## Current version
 
-This is an early local prototype.
+This is a stable local optimizer prototype.
 
 The current version:
 
@@ -19,6 +19,10 @@ The current version:
 * validates user settings and food data
 * reports when no feasible solution exists
 * prints an optimized daily food plan in grams
+* exports structured results to `result.json`
+* includes example input files
+* includes tested scenario examples for optimal and infeasible runs
+* includes automated tests
 
 ## Why this project exists
 
@@ -101,17 +105,24 @@ macrobudget/
 |-- result_printer.py
 |-- requirements.txt
 |-- README.md
+|-- CHANGELOG.md
+|-- BACKLOG.md
 |-- .gitignore
-`-- tests/
-    |-- test_data_loader.py
-    |-- test_optimization_model.py
-    |-- test_optimizer.py
-    `-- test_validation.py
 |-- scenarios/
 |   |-- optimal_settings.json
 |   |-- optimal_foods.csv
 |   |-- infeasible_settings.json
-|   |-- infeasible_foods.csv    
+|   `-- infeasible_foods.csv
+`-- tests/
+    |-- test_data_loader.py
+    |-- test_example_files.py
+    |-- test_optimization_model.py
+    |-- test_optimizer.py
+    |-- test_result_builder.py
+    |-- test_result_exporter.py
+    |-- test_result_printer.py
+    |-- test_scenarios.py
+    `-- test_validation.py
 ```
 
 Main responsibilities:
@@ -123,7 +134,7 @@ Main responsibilities:
 * `result_builder.py` converts PuLP optimization output into a structured Python result dictionary.
 * `result_exporter.py` formats and exports structured optimization results to JSON.
 * `result_printer.py` formats and prints structured results to the terminal.
-* `tests/` contains automated tests for validation, data loading, target calculation, and optimization behavior.
+* `tests/` contains automated tests for validation, data loading, examples, scenarios, optimization behavior, result building, JSON export, and result printing.
 
 ## Requirements
 
@@ -192,7 +203,7 @@ To run the test suite:
 python -m pytest
 ```
 
-Current tests cover user settings validation, food data validation, data loading, target calculation, optimization model constraints, and infeasible model behavior.
+Current tests cover user settings validation, food data validation, data loading, target calculation, optimization model constraints, structured result building, JSON export formatting, result printing, example input files, and scenario behavior.
 
 ## Data
 
@@ -282,13 +293,19 @@ See [BACKLOG.md](BACKLOG.md) for planned improvements and version scope.
 
 ## Roadmap
 
-### Version 1: Optimization core
+### Version 1: Stable local optimizer
 
 * local Python program
-* small CSV food dataset
+* CSV food dataset
+* JSON settings file
 * calorie, protein, and fat constraints
 * cost minimization
-* basic practical max limits
+* minimum and maximum grams per food
+* food category metadata
+* structured result representation
+* JSON result export
+* example input files
+* tested optimal and infeasible scenarios
 
 ### Version 2: Better nutrition model
 
