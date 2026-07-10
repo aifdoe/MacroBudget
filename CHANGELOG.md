@@ -2,6 +2,26 @@
 
 All notable changes to MacroBudget will be documented in this file.
 
+## v0.8.0 - Better configuration and examples
+
+### Added
+
+* Added `example_settings.json` as a reference settings file.
+* Added `example_foods.csv` as a reference food dataset.
+* Added tests to validate the example input files.
+
+### Changed
+
+* Updated README to document the example input files.
+* Updated README to explain how `example_settings.json` and `example_foods.csv` relate to the main `settings.json` and `foods.csv`.
+* Updated BACKLOG to mark the v0.8.0 configuration examples scope as completed.
+
+### Notes
+
+This version makes MacroBudget easier for other people to understand and try safely. The example files show the expected input structure without requiring users to immediately edit the main local files.
+
+The optimization model, terminal output, and JSON output were not changed in this release.
+
 ## v0.7.0 - Food data quality improvements
 
 ### Added
