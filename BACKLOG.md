@@ -184,17 +184,17 @@ Out of scope:
 
 ## v0.8.0 - Better configuration and examples
 
-Planned scope:
+Completed:
 
-* Add example input files for users who want to try the project safely.
-* Add `example_settings.json`.
-* Add `example_foods.csv`.
-* Document how example files relate to the main `settings.json` and `foods.csv`.
-* Improve README instructions for running the optimizer.
-* Keep the optimization model unchanged unless necessary.
-* Keep terminal output and JSON output unchanged.
-* Avoid adding new nutrition constraints in this version.
-* Avoid adding real store products, package sizes, scraping, product matching, database, web app, API, or dashboard.
+* Done: Add example input files for users who want to try the project safely.
+* Done: Add `example_settings.json`.
+* Done: Add `example_foods.csv`.
+* Done: Document how example files relate to the main `settings.json` and `foods.csv`.
+* Done: Improve README instructions for running the optimizer.
+* Done: Keep the optimization model unchanged unless necessary.
+* Done: Keep terminal output and JSON output unchanged.
+* Done: Avoid adding new nutrition constraints in this version.
+* Done: Avoid adding real store products, package sizes, scraping, product matching, database, web app, API, or dashboard.
 
 Purpose:
 
