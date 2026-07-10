@@ -216,17 +216,17 @@ Out of scope:
 
 ## v0.9.0 - Scenario examples and polish
 
-Planned scope:
+Completed:
 
-* Add small example scenario files that demonstrate different optimizer outcomes.
-* Add an optimal example scenario.
-* Add an infeasible example scenario.
-* Add tests to validate scenario files.
-* Document the scenario examples in README.
-* Keep the optimization model unchanged unless necessary.
-* Keep normal terminal output and JSON output unchanged.
-* Avoid adding new nutrition constraints in this version.
-* Avoid adding real store products, package sizes, scraping, product matching, database, web app, API, or dashboard.
+* Done: Add small example scenario files that demonstrate different optimizer outcomes.
+* Done: Add an optimal example scenario.
+* Done: Add an infeasible example scenario.
+* Done: Add tests to validate scenario files.
+* Done: Document the scenario examples in README.
+* Done: Keep the optimization model unchanged unless necessary.
+* Done: Keep normal terminal output and JSON output unchanged.
+* Done: Avoid adding new nutrition constraints in this version.
+* Done: Avoid adding real store products, package sizes, scraping, product matching, database, web app, API, or dashboard.
 
 Purpose:
 
