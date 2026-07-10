@@ -246,6 +246,49 @@ Out of scope:
 * price scraping
 * product matching
 
+## v1.0.0 - Stable local optimizer
+
+Planned scope:
+
+* Review README for clarity and consistency.
+* Review BACKLOG and CHANGELOG for consistency.
+* Ensure example files and scenario files are documented.
+* Ensure all tests pass.
+* Ensure `python optimizer.py` works from a clean checkout.
+* Keep the optimization model unchanged unless a bug is found.
+* Keep terminal output and JSON output unchanged.
+* Avoid adding new nutrition constraints in this version.
+* Avoid adding real store products, package sizes, scraping, product matching, database, web app, API, or dashboard.
+
+Purpose:
+
+This version should mark the first stable local version of MacroBudget. The project should be understandable, testable, documented, and usable as a local Python optimizer for minimizing food cost under calorie, protein, fat, and practical food constraints.
+
+Release criteria:
+
+* The project has a clear README.
+* The project has a documented changelog.
+* The project has a useful backlog.
+* The optimizer runs successfully with the main input files.
+* Example input files are valid.
+* Scenario files are valid and tested.
+* All automated tests pass.
+* The Git working tree is clean before tagging.
+
+Out of scope:
+
+* new optimization constraints
+* micronutrients
+* meal planning
+* real store products
+* package sizes
+* database
+* web app
+* API
+* dashboards
+* price scraping
+* product matching
+
 ## Later versions
 
 Possible future work:
