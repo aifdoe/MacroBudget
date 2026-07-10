@@ -107,6 +107,11 @@ macrobudget/
     |-- test_optimization_model.py
     |-- test_optimizer.py
     `-- test_validation.py
+|-- scenarios/
+|   |-- optimal_settings.json
+|   |-- optimal_foods.csv
+|   |-- infeasible_settings.json
+|   |-- infeasible_foods.csv    
 ```
 
 Main responsibilities:
@@ -159,6 +164,23 @@ The optimizer currently reads from:
 * `foods.csv`
 
 The example files are reference files for users who want to understand or copy the input format safely.
+
+### Scenario examples
+
+The repository includes scenario files in the `scenarios/` folder.
+
+Available scenarios:
+
+* `scenarios/optimal_settings.json`
+* `scenarios/optimal_foods.csv`
+* `scenarios/infeasible_settings.json`
+* `scenarios/infeasible_foods.csv`
+
+The optimal scenario demonstrates a successful optimization run.
+
+The infeasible scenario demonstrates a failed optimization case where the available foods and limits cannot satisfy the target ranges.
+
+These files are used by automated tests to verify both successful and infeasible optimizer behavior.
 
 ## Tests
 
