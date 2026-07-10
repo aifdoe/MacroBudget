@@ -214,6 +214,38 @@ Out of scope:
 * price scraping
 * product matching
 
+## v0.9.0 - Scenario examples and polish
+
+Planned scope:
+
+* Add small example scenario files that demonstrate different optimizer outcomes.
+* Add an optimal example scenario.
+* Add an infeasible example scenario.
+* Add tests to validate scenario files.
+* Document the scenario examples in README.
+* Keep the optimization model unchanged unless necessary.
+* Keep normal terminal output and JSON output unchanged.
+* Avoid adding new nutrition constraints in this version.
+* Avoid adding real store products, package sizes, scraping, product matching, database, web app, API, or dashboard.
+
+Purpose:
+
+This version should make MacroBudget easier to understand as a portfolio project. Scenario files should demonstrate how the optimizer behaves in both successful and failed optimization cases.
+
+Out of scope:
+
+* new optimization constraints
+* micronutrients
+* meal planning
+* real store products
+* package sizes
+* database
+* web app
+* API
+* dashboards
+* price scraping
+* product matching
+
 ## Later versions
 
 Possible future work:
