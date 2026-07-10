@@ -89,7 +89,9 @@ The generated JSON file is ignored by Git because it is local output, not source
 ```text
 macrobudget/
 |-- foods.csv
+|-- example_foods.csv
 |-- settings.json
+|-- example_settings.json
 |-- optimizer.py
 |-- data_loader.py
 |-- validation.py
@@ -141,6 +143,22 @@ Run the optimizer:
 ```powershell
 python optimizer.py
 ```
+
+### Example input files
+
+The repository includes example input files:
+
+* `example_settings.json`
+* `example_foods.csv`
+
+These files show the expected structure for user settings and food data.
+
+The optimizer currently reads from:
+
+* `settings.json`
+* `foods.csv`
+
+The example files are reference files for users who want to understand or copy the input format safely.
 
 ## Tests
 
