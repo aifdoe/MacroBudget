@@ -1,15 +1,16 @@
-HIGH_FIBER_WARNING_THRESHOLD_GRAMS = 50
+from nutrition_warnings import build_nutrition_warnings
 
-def print_nutrition_warnings(totals):
-    if totals["fiber"] <= HIGH_FIBER_WARNING_THRESHOLD_GRAMS:
+
+def print_nutrition_warnings(warnings):
+    if len(warnings) == 0:
         return
 
     print()
     print("Nutrition warnings:")
-    print(
-        f"* Fiber is high at {totals['fiber']:.1f} g. "
-        "This may be impractical for some users. Consider reviewing high-fiber foods or future fiber constraints."
-    )
+
+    for warning in warnings:
+        print(f"* {warning}")
+
 
 def print_results(result, targets):
     status = result["status"]
@@ -57,11 +58,13 @@ def print_results(result, targets):
 
     totals = result["totals"]
 
+    print()
     print(f"Total cost: {totals['cost']:.2f} SEK/day")
     print(f"Total calories: {totals['calories']:.0f} kcal")
     print(f"Total protein: {totals['protein']:.1f} g")
     print(f"Total fat: {totals['fat']:.1f} g")
     print(f"Total carbs: {totals['carbs']:.1f} g")
     print(f"Total fiber: {totals['fiber']:.1f} g")
-    
-    print_nutrition_warnings(totals)
+
+    warnings = build_nutrition_warnings(totals)
+    print_nutrition_warnings(warnings)
