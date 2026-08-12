@@ -67,6 +67,8 @@ def test_build_result_returns_structured_optimal_result():
     assert 40 <= result["totals"]["fat"] <= 80
     assert result["totals"]["carbs"] >= 0
     assert result["totals"]["fiber"] >= 0
+    assert "warnings" in result
+    assert isinstance(result["warnings"], list)
 
 
 def test_build_result_returns_status_for_infeasible_model():
@@ -107,3 +109,4 @@ def test_build_result_returns_status_for_infeasible_model():
     assert result["status"] == "Infeasible"
     assert result["selected_foods"] == []
     assert result["totals"] is None
+    assert result["warnings"] == []

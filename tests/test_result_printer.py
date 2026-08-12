@@ -6,6 +6,7 @@ def test_print_results_gives_helpful_feedback_for_infeasible_result(capsys):
         "status": "Infeasible",
         "selected_foods": [],
         "totals": None,
+        "warnings": [],
     }
 
     targets = {
@@ -48,6 +49,9 @@ def test_print_results_warns_when_fiber_is_high(capsys):
             "carbs": 442.1,
             "fiber": 62.0,
         },
+        "warnings": [
+            "Fiber is high at 62.0 g. This may be impractical for some users."
+        ],
     }
 
     targets = {

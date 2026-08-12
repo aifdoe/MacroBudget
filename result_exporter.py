@@ -6,6 +6,7 @@ def format_result_for_export(result):
         "status": result["status"],
         "selected_foods": [],
         "totals": None,
+        "warnings": result["warnings"],
     }
 
     for food in result["selected_foods"]:

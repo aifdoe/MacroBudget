@@ -1,6 +1,3 @@
-from nutrition_warnings import build_nutrition_warnings
-
-
 def print_nutrition_warnings(warnings):
     if len(warnings) == 0:
         return
@@ -66,5 +63,4 @@ def print_results(result, targets):
     print(f"Total carbs: {totals['carbs']:.1f} g")
     print(f"Total fiber: {totals['fiber']:.1f} g")
 
-    warnings = build_nutrition_warnings(totals)
-    print_nutrition_warnings(warnings)
+    print_nutrition_warnings(result["warnings"])

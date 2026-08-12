@@ -1,5 +1,7 @@
 import pulp
 
+from nutrition_warnings import build_nutrition_warnings
+
 
 def build_result(model, foods, food_vars, total_cost, total_calories, total_protein, total_fat):
     status = pulp.LpStatus[model.status]
@@ -8,6 +10,7 @@ def build_result(model, foods, food_vars, total_cost, total_calories, total_prot
         "status": status,
         "selected_foods": [],
         "totals": None,
+        "warnings": [],
     }
 
     if status != "Optimal":
@@ -33,8 +36,7 @@ def build_result(model, foods, food_vars, total_cost, total_calories, total_prot
             total_carbs += grams * food["carbs_per_100g"] / 100
             total_fiber += grams * food["fiber_per_100g"] / 100
 
-    result["selected_foods"] = selected_foods
-    result["totals"] = {
+    totals = {
         "cost": pulp.value(total_cost),
         "calories": pulp.value(total_calories),
         "protein": pulp.value(total_protein),
@@ -42,5 +44,9 @@ def build_result(model, foods, food_vars, total_cost, total_calories, total_prot
         "carbs": total_carbs,
         "fiber": total_fiber,
     }
+
+    result["selected_foods"] = selected_foods
+    result["totals"] = totals
+    result["warnings"] = build_nutrition_warnings(totals)
 
     return result

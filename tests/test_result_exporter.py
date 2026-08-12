@@ -21,6 +21,9 @@ def test_format_result_for_export_rounds_numeric_values():
             "carbs": 442.11234,
             "fiber": 61.95321,
         },
+        "warnings": [
+            "Fiber is high at 62.0 g. This may be impractical for some users."
+        ],
     }
 
     formatted_result = format_result_for_export(result)
@@ -42,6 +45,9 @@ def test_format_result_for_export_rounds_numeric_values():
             "carbs": 442.1,
             "fiber": 62.0,
         },
+        "warnings": [
+            "Fiber is high at 62.0 g. This may be impractical for some users."
+        ],
     }
 
 
@@ -50,6 +56,7 @@ def test_format_result_for_export_handles_non_optimal_result():
         "status": "Infeasible",
         "selected_foods": [],
         "totals": None,
+        "warnings": [],
     }
 
     formatted_result = format_result_for_export(result)
@@ -58,6 +65,7 @@ def test_format_result_for_export_handles_non_optimal_result():
         "status": "Infeasible",
         "selected_foods": [],
         "totals": None,
+        "warnings": [],
     }
 
 
@@ -79,6 +87,9 @@ def test_export_result_to_json_writes_formatted_result_file(tmp_path):
             "carbs": 442.112,
             "fiber": 61.953,
         },
+        "warnings": [
+            "Fiber is high at 62.0 g. This may be impractical for some users."
+        ],
     }
 
     output_file = tmp_path / "result.json"
@@ -104,4 +115,7 @@ def test_export_result_to_json_writes_formatted_result_file(tmp_path):
             "carbs": 442.1,
             "fiber": 62.0,
         },
+        "warnings": [
+            "Fiber is high at 62.0 g. This may be impractical for some users."
+        ],
     }
