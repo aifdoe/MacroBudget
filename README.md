@@ -23,6 +23,8 @@ The current version:
 * includes example input files
 * includes tested scenario examples for optimal and infeasible runs
 * includes automated tests
+* tracks calories, protein, fat, carbohydrates, and fiber
+* reports total carbohydrates and fiber in terminal and JSON output
 
 ## Why this project exists
 
@@ -80,6 +82,8 @@ Total cost: 27.34 SEK/day
 Total calories: 2700 kcal
 Total protein: 113.5 g
 Total fat: 42.5 g
+Total carbs: 442.1 g
+Total fiber: 62.0 g
 ```
 
 The example includes a minimum daily amount of frozen vegetables. The selected foods may change when the dataset is expanded, because the optimizer always chooses the lowest-cost combination that satisfies the constraints.
@@ -231,6 +235,8 @@ Allowed categories:
 Categories are currently used as food metadata only. They do not yet affect the optimization model.
 
 They prepare the project for future practical constraints, such as minimum vegetables, minimum fruit, or maximum supplement usage.
+
+The food data currently includes calories, protein, fat, carbohydrates, and fiber per 100 grams.
 
 ## User settings
 
