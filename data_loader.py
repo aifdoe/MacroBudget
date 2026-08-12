@@ -51,6 +51,12 @@ def load_foods(file_path):
                     "fat_per_100g": parse_non_negative_number(
                         row["fat_per_100g"], "fat_per_100g", row_number
                     ),
+                    "carbs_per_100g": parse_non_negative_number(
+                         row["carbs_per_100g"], "carbs_per_100g", row_number
+                    ),
+                    "fiber_per_100g": parse_non_negative_number(
+                        row["fiber_per_100g"], "fiber_per_100g", row_number
+                    ),
                     "min_grams_per_day": parse_non_negative_number(
                         row["min_grams_per_day"], "min_grams_per_day", row_number
                     ),                    

@@ -70,6 +70,8 @@ def validate_food_columns(fieldnames):
         "kcal_per_100g",
         "protein_per_100g",
         "fat_per_100g",
+        "carbs_per_100g",
+        "fiber_per_100g",
         "min_grams_per_day",
         "max_grams_per_day",
     ]

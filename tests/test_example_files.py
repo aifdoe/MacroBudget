@@ -18,3 +18,5 @@ def test_example_foods_file_is_valid():
     assert len(foods) > 0
     assert foods[0]["name"] == "basmati_rice_dry"
     assert foods[0]["category"] == "carb"
+    assert "carbs_per_100g" in foods[0]
+    assert "fiber_per_100g" in foods[0]
