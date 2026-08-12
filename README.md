@@ -25,6 +25,8 @@ The current version:
 * includes automated tests
 * tracks calories, protein, fat, carbohydrates, and fiber
 * reports total carbohydrates and fiber in terminal and JSON output
+* adds nutrition warnings for potentially impractical results
+* includes warnings in structured results and JSON output
 
 ## Why this project exists
 
@@ -84,6 +86,9 @@ Total protein: 113.5 g
 Total fat: 42.5 g
 Total carbs: 442.1 g
 Total fiber: 62.0 g
+
+Nutrition warnings:
+* Fiber is high at 62.0 g. This may be impractical for some users. Consider reviewing high-fiber foods or future fiber constraints.
 ```
 
 The example includes a minimum daily amount of frozen vegetables. The selected foods may change when the dataset is expanded, because the optimizer always chooses the lowest-cost combination that satisfies the constraints.
@@ -91,6 +96,8 @@ The example includes a minimum daily amount of frozen vegetables. The selected f
 Running the optimizer also writes the latest structured result to `result.json`.
 
 The generated JSON file is ignored by Git because it is local output, not source code.
+
+The JSON result includes the solver status, selected foods, nutrition totals, and any generated warnings.
 
 ## Project structure
 
@@ -107,6 +114,7 @@ macrobudget/
 |-- result_builder.py
 |-- result_exporter.py
 |-- result_printer.py
+|-- nutrition_warnings.py
 |-- requirements.txt
 |-- README.md
 |-- CHANGELOG.md
@@ -120,6 +128,7 @@ macrobudget/
 `-- tests/
     |-- test_data_loader.py
     |-- test_example_files.py
+    |-- test_nutrition_warnings.py
     |-- test_optimization_model.py
     |-- test_optimizer.py
     |-- test_result_builder.py
@@ -138,6 +147,7 @@ Main responsibilities:
 * `result_builder.py` converts PuLP optimization output into a structured Python result dictionary.
 * `result_exporter.py` formats and exports structured optimization results to JSON.
 * `result_printer.py` formats and prints structured results to the terminal.
+* `nutrition_warnings.py` builds nutrition warning messages for potentially impractical optimization results.
 * `tests/` contains automated tests for validation, data loading, examples, scenarios, optimization behavior, result building, JSON export, and result printing.
 
 ## Requirements
@@ -207,7 +217,7 @@ To run the test suite:
 python -m pytest
 ```
 
-Current tests cover user settings validation, food data validation, data loading, target calculation, optimization model constraints, structured result building, JSON export formatting, result printing, example input files, and scenario behavior.
+Current tests cover user settings validation, food data validation, data loading, target calculation, optimization model constraints, structured result building, JSON export formatting, nutrition warnings, result printing, example input files, and scenario behavior.
 
 ## Data
 

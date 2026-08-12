@@ -289,6 +289,43 @@ Out of scope:
 * price scraping
 * product matching
 
+## v1.1.0 - Nutrition reporting and warnings
+
+Completed:
+
+* Done: Add `carbs_per_100g` and `fiber_per_100g` to food data.
+* Done: Update food data validation for carbohydrates and fiber.
+* Done: Update data loading tests for carbohydrates and fiber.
+* Done: Report total carbohydrates and fiber in terminal output.
+* Done: Export total carbohydrates and fiber to `result.json`.
+* Done: Add a high-fiber nutrition warning.
+* Done: Move nutrition warning logic into `nutrition_warnings.py`.
+* Done: Add nutrition warnings to structured results.
+* Done: Export warnings to `result.json`.
+* Done: Add tests for nutrition warnings.
+* Done: Keep the optimization model unchanged.
+* Done: Avoid adding hard carbohydrate or fiber constraints in this version.
+
+Purpose:
+
+This version should improve nutrition visibility and practical feedback without making the optimization model more complex. The optimizer should still solve the same calorie, protein, fat, cost, and food amount problem, but it should now report carbohydrates, fiber, and warning messages for potentially impractical results.
+
+Out of scope:
+
+* hard carbohydrate constraints
+* hard fiber constraints
+* micronutrients
+* sodium tracking
+* meal planning
+* real store products
+* package sizes
+* database
+* web app
+* API
+* dashboards
+* price scraping
+* product matching
+
 ## Later versions
 
 Possible future work:

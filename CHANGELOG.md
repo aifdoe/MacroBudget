@@ -2,6 +2,33 @@
 
 All notable changes to MacroBudget will be documented in this file.
 
+## v1.1.0 - Nutrition reporting and warnings
+
+### Added
+
+* Added carbohydrate and fiber fields to food data.
+* Added carbohydrate and fiber loading and validation.
+* Added total carbohydrate and fiber reporting in terminal output.
+* Added total carbohydrate and fiber export to `result.json`.
+* Added high-fiber nutrition warnings for potentially impractical results.
+* Added `nutrition_warnings.py` for nutrition warning logic.
+* Added warnings to structured optimization results.
+* Added warnings to JSON result export.
+* Added tests for nutrition warnings.
+
+### Changed
+
+* Updated `result_builder.py` to include carbohydrate totals, fiber totals, and warnings.
+* Updated `result_exporter.py` to export carbohydrate totals, fiber totals, and warnings.
+* Updated `result_printer.py` to print nutrition warnings from structured results.
+* Updated README documentation for nutrition reporting and warnings.
+
+### Notes
+
+This version improves nutrition visibility and practical feedback while keeping the optimization model unchanged.
+
+MacroBudget still optimizes cost under calorie, protein, fat, and food amount constraints. Carbohydrates, fiber, and warnings are currently reported after solving; they do not yet act as hard optimization constraints.
+
 ## v1.0.0 - Stable local optimizer
 
 ### Added
