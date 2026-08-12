@@ -18,6 +18,8 @@ def test_format_result_for_export_rounds_numeric_values():
             "calories": 2700.0000164000003,
             "protein": 113.4585648,
             "fat": 42.5469616,
+            "carbs": 442.11234,
+            "fiber": 61.95321,
         },
     }
 
@@ -37,6 +39,8 @@ def test_format_result_for_export_rounds_numeric_values():
             "calories": 2700,
             "protein": 113.5,
             "fat": 42.5,
+            "carbs": 442.1,
+            "fiber": 62.0,
         },
     }
 
@@ -72,6 +76,8 @@ def test_export_result_to_json_writes_formatted_result_file(tmp_path):
             "calories": 2700.0001,
             "protein": 113.458,
             "fat": 42.546,
+            "carbs": 442.112,
+            "fiber": 61.953,
         },
     }
 
@@ -95,5 +101,7 @@ def test_export_result_to_json_writes_formatted_result_file(tmp_path):
             "calories": 2700,
             "protein": 113.5,
             "fat": 42.5,
+            "carbs": 442.1,
+            "fiber": 62.0,
         },
     }

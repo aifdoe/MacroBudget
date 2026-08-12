@@ -23,6 +23,8 @@ def format_result_for_export(result):
             "calories": round(result["totals"]["calories"]),
             "protein": round(result["totals"]["protein"], 1),
             "fat": round(result["totals"]["fat"], 1),
+            "carbs": round(result["totals"]["carbs"], 1),
+            "fiber": round(result["totals"]["fiber"], 1),
         }
 
     return formatted_result

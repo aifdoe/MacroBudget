@@ -10,6 +10,8 @@ def test_build_result_returns_structured_optimal_result():
             "kcal_per_100g": 360,
             "protein_per_100g": 7,
             "fat_per_100g": 1,
+            "carbs_per_100g": 78,
+            "fiber_per_100g": 1.3,
             "min_grams_per_day": 0,
             "max_grams_per_day": 1000,
         },
@@ -19,6 +21,8 @@ def test_build_result_returns_structured_optimal_result():
             "kcal_per_100g": 110,
             "protein_per_100g": 23,
             "fat_per_100g": 2,
+            "carbs_per_100g": 0,
+            "fiber_per_100g": 0,
             "min_grams_per_day": 0,
             "max_grams_per_day": 1000,
         },
@@ -28,6 +32,8 @@ def test_build_result_returns_structured_optimal_result():
             "kcal_per_100g": 884,
             "protein_per_100g": 0,
             "fat_per_100g": 100,
+            "carbs_per_100g": 0,
+            "fiber_per_100g": 0,
             "min_grams_per_day": 0,
             "max_grams_per_day": 100,
         },
@@ -59,6 +65,8 @@ def test_build_result_returns_structured_optimal_result():
     assert 2000 <= result["totals"]["calories"] <= 2100
     assert 100 <= result["totals"]["protein"] <= 140
     assert 40 <= result["totals"]["fat"] <= 80
+    assert result["totals"]["carbs"] >= 0
+    assert result["totals"]["fiber"] >= 0
 
 
 def test_build_result_returns_status_for_infeasible_model():
@@ -69,6 +77,8 @@ def test_build_result_returns_status_for_infeasible_model():
             "kcal_per_100g": 360,
             "protein_per_100g": 7,
             "fat_per_100g": 1,
+            "carbs_per_100g": 78,
+            "fiber_per_100g": 1.3,
             "min_grams_per_day": 0,
             "max_grams_per_day": 100,
         }

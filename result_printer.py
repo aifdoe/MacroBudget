@@ -44,8 +44,9 @@ def print_results(result, targets):
 
     totals = result["totals"]
 
-    print()
     print(f"Total cost: {totals['cost']:.2f} SEK/day")
     print(f"Total calories: {totals['calories']:.0f} kcal")
     print(f"Total protein: {totals['protein']:.1f} g")
     print(f"Total fat: {totals['fat']:.1f} g")
+    print(f"Total carbs: {totals['carbs']:.1f} g")
+    print(f"Total fiber: {totals['fiber']:.1f} g")
